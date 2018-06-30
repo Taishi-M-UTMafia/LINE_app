@@ -1,9 +1,10 @@
 class ApplicationController < ActionController::Base
+  #CSRF対策を可能にする、ザックリ言うと不正アクセスのcheck
   protect_from_forgery with: :exception
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   def after_sign_in_path_for(resource)
-		pages_show_path
+		"/users/#{current_user.id}"
 	end
 
   private

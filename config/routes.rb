@@ -1,10 +1,9 @@
 Rails.application.routes.draw do
 
-  get '/rooms/show'=> 'rooms#show'
-
   devise_for :users
-  get 'home/show'=>'home#show'
+  get 'rooms/show'=> 'rooms#show'
+
+  get 'users/:id'=>'users#top'
+
   root 'home#top'
-
-
 end
