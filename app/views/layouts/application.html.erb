@@ -20,6 +20,7 @@
         <%= link_to 'My Page',"/users/#{current_user.id}"%>
         <%= link_to 'Edit profile', edit_user_registration_path %>
         <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+        ログイン中のユーザーのID:<%= current_user.id%>
       <% else %>
         <%= link_to 'Sign up', new_user_registration_path %>
         <%= link_to 'Sign in', new_user_session_path %>
