@@ -1,0 +1,6 @@
+<p>Hello,<%= current_user.username%>!</p>
+<p>Let's chat with...</p>
+
+<% @users.each do |user|%>
+<%= user.username%><br>
+<% end %>
