@@ -14,19 +14,23 @@
     </script>
     <![endif]-->
   </head>
-    <nav>
-      <%= link_to 'TOP',root_url%>
-      <% if user_signed_in? %>
-        Signed in as: <%= current_user.username%>
-        <%= link_to 'Chat Page',"/users/#{current_user.id}"%>
-        <%= link_to 'Edit profile', edit_user_registration_path %>
-        <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
-      <% else %>
-        <%= link_to 'Sign up', new_user_registration_path %>
-        <%= link_to 'Sign in', new_user_session_path %>
-      <% end %>
-    </nav>
   <body>
+    <header>
+      <div class="header-logo">
+        <%= link_to 'LINE',root_url%>
+      </div>
+      <ul class="header-menus">
+        <% if user_signed_in? %>
+          <li>Signed in as: <%= current_user.username%></li>
+          <li><%= link_to 'Chat',"/users/#{current_user.id}"%></li>
+          <li><%= link_to 'Edit Profile', edit_user_registration_path %></li>
+          <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
+        <% else %>
+          <li><%= link_to 'Sign in', new_user_session_path %></li>
+          <li><%= link_to 'Sign up', new_user_registration_path %></li>
+        <% end %>
+      </ul>
+    </header>
     <!-- Flashメッセージ-->
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
