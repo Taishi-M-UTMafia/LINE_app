@@ -6,7 +6,7 @@
     <% @users.each do |user|%>
       <div class="users-index-item">
         <div class="user-right">
-          <p><%= link_to user.username,root_url%></p>
+          <p><%= link_to user.username,"/rooms/#{user.id}"%></p>
         </div>
       </div>
     <% end %>
