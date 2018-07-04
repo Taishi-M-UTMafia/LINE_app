@@ -2,6 +2,7 @@
   <h1>Chat room</h1>
 
   <form>
+    <input type="hidden" name="to_id" value="<%= @user.id %>">
     <label>Send messages to <%= @user.username%>:</label><br>
     <input type="text" data-behavior="room_speaker">
   </form>
