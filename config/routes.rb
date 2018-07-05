@@ -6,6 +6,4 @@ Rails.application.routes.draw do
   get 'users/:id'=>'users#top'
 
   root 'home#top'
-
-  mount ActionCable.server => '/cable'
 end
