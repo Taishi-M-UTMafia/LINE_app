@@ -1,5 +1,5 @@
 # README
-これは、LINEを模して製作された簡易チャットアプリです  
+LINEを模して製作された簡易チャットアプリです。 ProgateでRuby on Railsを学んだ直後に作られました。 
 
 製作者：Taishi Murakami  
 製作時間：1週間  
