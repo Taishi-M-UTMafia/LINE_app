@@ -1,4 +1,6 @@
 App.room = App.cable.subscriptions.create "RoomChannel",
+
+
   connected: ->
     # Called when the subscription is ready for use on the server
 
@@ -10,10 +12,12 @@ App.room = App.cable.subscriptions.create "RoomChannel",
     # Called when there's incoming data on the websocket for this channel
 
   speak:(message) ->
-    @perform 'speak', message: message
+    to_id =$('input:hidden[name="to_id"]').val()
+    @perform 'speak', {message: message,to_id:to_id}
 
 $(document).on 'keypress', '[data-behavior~=room_speaker]', (event) ->
   if event.keyCode is 13 # return = send
+    # Roomチャンネルのspeakメソッドを実行
     App.room.speak event.target.value
     event.target.value = ''
     event.preventDefault()

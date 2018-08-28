@@ -2,7 +2,12 @@
   <h1>Chat room</h1>
 
   <form>
-    <label>Say something:</label><br>
+    <input type="hidden" name="to_id" value="<%= @user.id %>">
+    <% if current_user.id==@user.id %>
+      <label>It's your space. Write down whatever you like here! :</label><br>
+    <% else%>
+      <label>Send messages to <%= @user.username%>:</label><br>
+    <% end %>
     <input type="text" data-behavior="room_speaker">
   </form>
 
